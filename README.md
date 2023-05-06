@@ -5,69 +5,67 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Pet API Node/NestJS Performance Test/Challenge
 
-## Description
+This repository contains an implementation of a Pet API using Node/NestJS, intended to be used as a performance test/challenge against .NET. 
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Purpose
 
-## Installation
+The purpose of this project is to compare the performance of Node/NestJS against other technologies, specifically .NET,  in building a CRUD API. The implementation follows a similar architectural pattern and uses similar technologies (such as NestJS for building RESTful APIs and TypeScript for type safety), making it easier to compare their performance.
 
-```bash
-$ npm install
+## Getting Started
+
+To run the Node/NestJS implementation:
+
+1. Install Node.js and npm.
+2. Clone this repository.
+3. Navigate to the `pet-api-nestjs` directory.
+4. Run `npm install` to install dependencies.
+5. Run `npm run start` to start the server.
+
+The server should now be running on `http://localhost:3000`.
+
+## Usage
+
+The Pet API allows you to perform CRUD operations on pets. The following endpoints are available:
+
+| Method | Endpoint         | Description             |
+| ------ | ---------------- | ----------------------- |
+| GET    | /pets            | Get all pets            |
+| GET    | /pets/:id        | Get a pet by ID         |
+| POST   | /pets            | Create a new pet        |
+| PUT    | /pets/:id        | Update an existing pet  |
+| DELETE | /pets/:id        | Delete a pet            |
+
+The body of the POST and PUT requests should contain a JSON object representing the pet, with the following properties:
+
+| Property | Type   | Required |
+| -------- | ------ | -------- |
+| name     | string | Yes      |
+| age      | number | Yes      |
+| breed    | string | No       |
+
+Example POST request body:
+
+```json
+{
+  "name": "Fluffy",
+  "age": 2,
+  "breed": "Persian"
+}
 ```
 
-## Running the app
+Example PUT request body:
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```json
+{
+  "name": "Fluffy",
+  "age": 3,
+  "breed": "Siamese"
+}
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+This project is licensed under the MIT License. See the LICENSE file for details.
